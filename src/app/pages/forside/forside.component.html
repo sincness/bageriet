@@ -1,0 +1,85 @@
+<header class="header">
+
+    <app-nav></app-nav>
+
+    <section class="image-slider">
+        <h1>Vi elsker at lave brød</h1>
+        <div class="slider">
+            <span id="leftie" class="material-icons">
+            keyboard_arrow_left
+            </span>
+            <span id="rightie" class="material-icons">
+            keyboard_arrow_right
+            </span>
+            <div class="dots">
+                <span class="dot" value="0"></span>
+                <span class="dot" value="1"></span>
+                <span class="dot" value="2"></span>
+            </div>
+            <figure>
+                <img draggable="false" src="../../../assets/img/slide1.jpg" alt="brød">
+            </figure>
+            <figure>
+                <img draggable="false" src="../../../assets/img/slide2.jpg" alt="brød">
+            </figure>
+            <figure>
+                <img draggable="false" src="../../../assets/img/slide3.jpg" alt="brød">
+            </figure>
+        </div>
+    </section>
+</header>
+
+
+<section class="hero">
+    <h2>Vi skaber lækkert brød!</h2>
+    <p class="light">Der er mange tilgængelige udgaver af Lorem Ipsum, men de fleste har gennemgået forandringer, når nogen har tilføjet humor eller tilfældige ord, som på ingen måde ser ægte ud.</p>
+
+    <section id="articles">
+        <article *ngFor="let item of news | slice:0:3; let i=index">
+            <figure>
+                <img src="../../../assets/img/article{{i+1}}.jpg" alt="Billede" />
+            </figure>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.teaser }}</p>
+        </article>
+    </section>
+</section>
+
+
+<section class="search">
+
+    <span id="group">
+        <h2>Tilmeld dig vores nyhedsbrev</h2>
+        <p class="light">Der er mange tilgængelige udgaver af brød, men vi har de fleste.</p>
+    </span>
+    <form>
+        <div>
+            <span class="material-icons">mail_outline</span>
+        </div>
+        <input type="email" name="inp" id="inp" placeholder="indtast din email..." autocomplete="off">
+        <input type="submit" value="Tilmeld" id="btn">
+    </form>
+</section>
+
+
+
+<section class="new">
+    <h2>Nyeste bagværk</h2>
+    <p class="light">Der er mange tilgængelige udgaver af Lorem Ipsum, men de fleste har gennemgået forandringer, når nogen har tilføjet humor eller tilfældige ord, som på ingen måde ser ægte ud.</p>
+    <section id="products">
+        <article *ngFor="let item of products.slice().reverse() | slice:0:8; let i=index;">
+            <figure>
+                <img src="{{ item.image.fullpath }}" alt="Billede" />
+            </figure>
+            <section>
+                <span class="material-icons">mode_comment</span><span id="count">22</span>
+            </section>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.teaser }}</p>
+            <a href="/produkt/{{item.id}}">Se mere</a>
+        </article>
+    </section>
+
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,10 @@
+<nav>
+    <ul>
+        <li><a routerLink="/forside">forside</a></li>
+        <li><a routerLink="/produkter">produkter</a></li>
+        <a routerLink="/" ><h2>bageriet</h2></a>
+        <li><a routerLink="/kontakt">kontakt</a></li>
+        <li *ngIf="!online"><a routerLink="/login">login</a></li>
+        <li *ngIf="online"><a routerLink="/logud">log ud</a></li>
+    </ul>
+</nav>

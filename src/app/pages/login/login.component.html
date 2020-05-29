@@ -1,0 +1,21 @@
+<header>
+    <app-nav></app-nav>
+</header>
+
+<main>
+    <section id="login">
+        <div class="triangle"></div>
+        <h2>Log ind</h2>
+        <form [formGroup]="form" (ngSubmit)="submitForm()" method="POST">
+            <input id="username" type="text" name="username" placeholder="Brugernavn" formControlName="username">
+            <input id="password" type="password" name="password" placeholder="Adgangskode" formControlName="password">
+            <input type="submit" value="Log ind">
+        </form>
+        <p class="error" *ngIf="error">{{error}}</p>
+    </section>
+</main>
+
+
+
+
+<app-footer></app-footer>

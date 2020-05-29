@@ -1,0 +1,31 @@
+nav {
+    padding: 1em;
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        @media(max-width: 625px) {
+          text-align: center;
+          display: grid;
+        }
+
+        h2 {
+            color: white;
+            font-size: 3.8rem;
+            margin: 0 1em;
+        }
+        li {
+            padding: 1em;
+            a{
+                color: white;
+                opacity: .7;
+                font-weight: 100;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+        }
+    }
+
+}

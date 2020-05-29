@@ -1,0 +1,89 @@
+header {
+    background: linear-gradient(#42667F, #628EA9);
+}
+
+main {
+    width: 400px;
+    margin: 1em auto;
+    font-size: 1em;
+    input {
+        box-sizing: border-box;
+        width: 100%;
+        border-width: 1px;
+        border-style: solid;
+        padding: 16px;
+        outline: 0;
+        font-family: inherit;
+        font-size: 0.95em;
+        margin: 0 0 1em;
+        padding: 12px;
+        display: block;
+    }
+    .triangle {
+        width: 0;
+        margin-right: auto;
+        margin-left: auto;
+        border: 12px solid transparent;
+        border-bottom-color: #28d;
+    }
+    h2 {
+        font-family: 'Open Sans', sans-serif !important;
+        background: #28d;
+        padding: 20px;
+        font-size: 1.4em;
+        font-weight: normal;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    form {
+        background: #456;
+        padding: 12px;
+
+        input[type="text"],
+        input[type="password"] {
+            background: #fff;
+            border-color: #bbb;
+            color: #555;
+        }
+        
+        /* Tekst felter fokus effekt */
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #888;
+        }
+        
+        input[type="submit"] {
+            background: #28d;
+            border-color: transparent;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background: #17c;
+        }
+        
+        /* Button fokus effekt */
+        input[type="submit"]:focus {
+            border-color: #05a;
+        }    
+        
+    }
+
+            .error {
+                // color: salmon;
+                color: #fff;
+                background-color: salmon;
+                // background-color: tomato;
+                text-align: center;
+                padding: 0.75rem;
+                margin-top: 1rem;
+                border-radius: 2px;
+                font-size: .9rem;
+            }
+}   
+
+
+
+

@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    user-select: none;
+}
+
+body {
+    min-height: 100%;
+    background-color: #fafafa;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lobster', cursive;
+}

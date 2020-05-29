@@ -1,0 +1,102 @@
+<header class="header">
+    <app-nav></app-nav>
+</header>
+<main>
+    <section id="breadcrumbs">
+        <span>Produkter</span>
+        <span> > </span>
+        <span>{{data.title}}</span>
+    </section>
+    <section id="container">
+        <header>
+            <div class="title">
+                <h1>{{data.title}}</h1>
+                <h3>Subtitle</h3>
+            </div>
+            <div (click)="like(id)" class="like">
+                <p>LIKE!</p>
+                <input id="toggle-heart" type="checkbox"/>
+                <label for="toggle-heart" aria-label="like">❤</label>
+                <!-- <span class="material-icons">
+                    favorite_border
+                </span> -->
+            </div>
+        </header>
+        <section id="main">
+            <article id="text">
+                <figure>
+                    <img *ngIf="data.image" [src]="data.image.fullpath" alt="Mad">
+                </figure>
+                <p>
+                    {{ data.description }}
+                </p>
+
+            </article>
+            <article id="sidebar">
+                <h2>Ingredienser</h2>
+                <ul>
+                    <li *ngFor="let ingrediens of data.ingredients">{{ingrediens.amount}} {{ingrediens.unit_abbr}}.
+                        {{ingrediens.ingredient_title}}</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="comment">
+
+            <header class="text">
+                <h2>kommentarer</h2>
+                <section>
+                    <span id="count">{{ comments.count }}</span><span class="material-icons">mode_comment</span>
+                </section>
+            </header>
+
+            <form (ngSubmit)="comment(id)" [formGroup]="form">
+
+                <section>
+                    <span class="material-icons">edit</span>
+                </section>
+                <input type="text" name="inp" id="inp" placeholder="indtast din kommentar..." autocomplete="off" formControlName="comment">
+                <input type="submit" value="Tilføj" id="btn">
+
+            </form>
+
+            <ul>
+                <li *ngFor="let post of comments.posts">
+                    <figure><img src="https://via.placeholder.com/150" alt="Profil"></figure>
+                    <section>
+                        <h2>{{ post.title }}</h2>
+                        <p>{{ timeConverter(post.created)}}</p>
+                        <p>{{ post.comment }}</p>
+                    </section>
+                </li>
+                <li>
+                    <figure><img src="https://via.placeholder.com/150" alt="Profil"></figure>
+                    <section>
+                        <h2>Louise Hansen</h2>
+                        <p>23 maj kl. 20:14 2017</p>
+                        <p>Jeg må prøve denne opskrift da mine brød altid bliver lidt brændt. jeg har før prøvet at lave andre brød fra denne side med success</p>
+                    </section>
+                </li>
+                <li>
+                    <figure><img src="https://via.placeholder.com/150" alt="Profil"></figure>
+                    <section>
+                        <h2>Jonathan Meyer</h2>
+                        <p>23 maj kl. 20:14 2017</p>
+                        <p>Jeg må prøve denne opskrift da mine brød altid bliver lidt brændt. jeg har før prøvet at lave andre brød fra denne side med success</p>
+                    </section>
+                </li>
+                <li>
+                    <figure><img src="https://via.placeholder.com/150" alt="Profil"></figure>
+                    <section>
+                        <h2>Carsten Andreasen</h2>
+                        <p>23 maj kl. 20:14 2017</p>
+                        <p>Jeg må prøve denne opskrift da mine brød altid bliver lidt brændt. jeg har før prøvet at lave andre brød fra denne side med success</p>
+                    </section>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,33 @@
+<header class="header">
+    <app-nav></app-nav>
+</header>
+<main>
+    <header>
+        <h2>Vores elskede bagværk</h2>
+        <p class="light">Der er mange tilgængelige udgaver af Lorem Ipsum, men de fleste har gennemgået forandringer, når nogen har tilføjet humor eller tilfældige ord, som på ingen måde ser ægte ud.</p>
+    </header>
+
+    <article class="main">
+        <nav id="sidenav">
+            <ul>
+                <li *ngFor="let category of categories" ><a [class.active]="sortBy === category.title" (click)="filter(category.title)">{{ category.title }}</a></li>
+    
+            </ul>
+        </nav>
+        <section id="products">
+            <article *ngFor="let item of filtered">
+                <figure>
+                    <img src="{{ item.image.fullpath }}" alt="Billede" />
+                </figure>
+                <section>
+                    <span class="material-icons">mode_comment</span><span id="count">22</span>
+                </section>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.teaser }}</p>
+                <a href="/produkt/{{item.id}}">Se mere</a>
+            </article>
+        </section>
+    </article>
+</main>
+
+<app-footer></app-footer>

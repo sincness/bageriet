@@ -1,0 +1,71 @@
+header {
+    background: linear-gradient(#42667F, #628EA9);
+}
+
+main {
+    display: grid;
+    margin: 6rem 20% 0;
+    // margin: 6rem 0 0 0;
+    @media (max-width: 1000px) {
+    margin: 2rem 10% 0;
+    }
+    h2, p {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 3rem;
+        color: #324049;
+    }
+
+    p {
+        margin: 3% auto 7%;
+        width: 60%;
+        font-size: .9rem;
+        @media (max-width: 1000px) {
+          margin: 0 auto;
+          width: 90%;
+        }
+    }
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+
+        @media (max-width: 1000px) {
+          margin-top: 5%;
+          grid-template-columns: 1fr;
+        }
+
+
+        form, section {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1rem;
+            input, textarea {
+                border: none;
+                outline: 0;
+            }
+            span {
+                display: block;
+            }
+            input#navn, input#mail {
+              padding-left: 1rem;
+            }
+            textarea {
+                padding: 1rem 0 0 1rem;
+                resize: none;
+            }
+            input#btn {
+                font-family: 'Open Sans', sans-serif;
+                padding: 0 3vw;
+                background-color: #617685;
+                border: none;
+                color: #fff;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
